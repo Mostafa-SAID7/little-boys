@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Product } from '@/types/product';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -42,7 +43,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
       aria-labelledby={`product-${product.id}-title`}
     >
       {/* Image */}
-      <div className="relative aspect-square bg-muted overflow-hidden">
+      <Link to={`/product/${product.slug}`} className="relative aspect-square bg-muted overflow-hidden block">
         <img
           src={product.images[0]}
           alt={product.title}
@@ -72,7 +73,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
         >
           <Heart className="h-4 w-4 text-muted-foreground hover:text-primary" />
         </button>
-      </div>
+      </Link>
 
       {/* Content */}
       <div className="p-4">
@@ -82,12 +83,14 @@ export function ProductCard({ product, className }: ProductCardProps) {
         </p>
 
         {/* Title */}
-        <h3
-          id={`product-${product.id}-title`}
-          className="font-display font-semibold text-foreground line-clamp-2 mb-2 group-hover:text-primary transition-colors"
-        >
-          {product.title}
-        </h3>
+        <Link to={`/product/${product.slug}`}>
+          <h3
+            id={`product-${product.id}-title`}
+            className="font-display font-semibold text-foreground line-clamp-2 mb-2 group-hover:text-primary transition-colors"
+          >
+            {product.title}
+          </h3>
+        </Link>
 
         {/* Rating */}
         <div className="flex items-center gap-1 mb-3">
