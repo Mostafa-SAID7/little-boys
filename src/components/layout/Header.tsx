@@ -29,7 +29,7 @@ export function Header() {
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container">
         {/* Top bar - Infinite scrolling announcement */}
-        <div className="hidden md:block relative overflow-hidden py-2 text-sm text-muted-foreground border-b border-border">
+        <div className="hidden md:block relative overflow-hidden py-2 text-sm text-muted-foreground">
           <div className="flex animate-scroll whitespace-nowrap">
             <span className="inline-block px-4">✨ Free shipping on orders over $50 • Easy 30-day returns</span>
             <span className="inline-block px-4">✨ Free shipping on orders over $50 • Easy 30-day returns</span>
