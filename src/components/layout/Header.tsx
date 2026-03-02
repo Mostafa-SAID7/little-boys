@@ -39,12 +39,12 @@ export function Header() {
         </div>
 
         {/* Main header */}
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-14 md:h-20 px-2 md:px-0">
           {/* Mobile menu button */}
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="md:hidden h-9 w-9"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -52,11 +52,11 @@ export function Header() {
           </Button>
 
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="flex items-center justify-center w-10 h-10 rounded bg-primary text-primary-foreground font-bold text-lg">
+          <Link to="/" className="flex items-center gap-1.5 md:gap-2">
+            <div className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded bg-primary text-primary-foreground font-bold text-base md:text-lg">
               LB
             </div>
-            <span className="font-display font-bold text-xl md:text-2xl text-foreground">
+            <span className="font-display font-bold text-lg md:text-2xl text-foreground">
               Little <span className="text-primary">Boys</span>
             </span>
           </Link>
@@ -80,19 +80,19 @@ export function Header() {
           </nav>
 
           {/* Actions */}
-          <div className="flex items-center gap-1">
-            <Button variant="ghost" size="icon" asChild aria-label="Search">
+          <div className="flex items-center gap-0.5 md:gap-1">
+            <Button variant="ghost" size="icon" className="h-9 w-9" asChild aria-label="Search">
               <Link to="/search">
                 <Search className="h-5 w-5" />
               </Link>
             </Button>
             <ThemeToggle />
-            <Button variant="ghost" size="icon" className="hidden sm:flex" asChild aria-label="Wishlist">
+            <Button variant="ghost" size="icon" className="hidden sm:flex h-9 w-9" asChild aria-label="Wishlist">
               <Link to="/wishlist">
                 <Heart className="h-5 w-5" />
               </Link>
             </Button>
-            <Button variant="ghost" size="icon" className="hidden sm:flex" asChild aria-label="Account">
+            <Button variant="ghost" size="icon" className="hidden sm:flex h-9 w-9" asChild aria-label="Account">
               <Link to="/profile">
                 <User className="h-5 w-5" />
               </Link>
@@ -100,7 +100,7 @@ export function Header() {
             <Button
               variant="ghost"
               size="icon"
-              className="relative"
+              className="relative h-9 w-9"
               onClick={toggleCart}
               aria-label={`Shopping cart with ${itemCount} items`}
             >
