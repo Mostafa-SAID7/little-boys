@@ -19,33 +19,45 @@ export function NewsletterSection() {
   return (
     <section className="py-16 md:py-20 bg-primary/5">
       <div className="container">
-        <div className="max-w-2xl mx-auto text-center">
-          <span className="text-5xl block mb-4">💌</span>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Join Our Family
-          </h2>
-          <p className="text-muted-foreground mb-8">
-            Subscribe for exclusive deals, new arrivals, and parenting tips. 
-            Plus, get 10% off your first order!
-          </p>
-
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <Input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 h-12 rounded-xl"
-              required
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center max-w-6xl mx-auto">
+          {/* Image */}
+          <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=800&auto=format&fit=crop&q=80"
+              alt="Happy family"
+              className="w-full h-full object-cover"
             />
-            <Button type="submit" size="lg">
-              Subscribe
-            </Button>
-          </form>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+          </div>
 
-          <p className="text-xs text-muted-foreground mt-4">
-            No spam, unsubscribe anytime. We respect your privacy.
-          </p>
+          {/* Content */}
+          <div>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Join Our Family
+            </h2>
+            <p className="text-muted-foreground mb-8">
+              Subscribe for exclusive deals, new arrivals, and parenting tips. 
+              Plus, get 10% off your first order!
+            </p>
+
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
+              <Input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1 h-12 rounded-xl"
+                required
+              />
+              <Button type="submit" size="lg">
+                Subscribe
+              </Button>
+            </form>
+
+            <p className="text-xs text-muted-foreground mt-4">
+              No spam, unsubscribe anytime. We respect your privacy.
+            </p>
+          </div>
         </div>
       </div>
     </section>
