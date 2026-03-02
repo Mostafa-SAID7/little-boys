@@ -45,10 +45,10 @@ export function ProductCard({ product, className, viewMode = 'grid' }: ProductCa
         role="article"
         aria-labelledby={`product-${product.id}-title`}
       >
-        <div className="flex gap-4 p-4">
-          {/* Image - smaller and on the left */}
-          <Link to={`/products/${product.slug}`} className="relative flex-shrink-0">
-            <div className="relative w-32 h-32 bg-muted rounded overflow-hidden">
+        <div className="flex gap-4">
+          {/* Image - full height on the left */}
+          <Link to={`/products/${product.slug}`} className="relative flex-shrink-0 w-32">
+            <div className="relative h-full bg-muted overflow-hidden">
               <img
                 src={product.images[0]}
                 alt={product.title}
@@ -67,7 +67,7 @@ export function ProductCard({ product, className, viewMode = 'grid' }: ProductCa
           </Link>
 
           {/* Content - on the right */}
-          <div className="flex-1 min-w-0 flex flex-col">
+          <div className="flex-1 min-w-0 flex flex-col p-4">
             {/* Top section */}
             <div className="flex-1">
               {/* Badges */}
