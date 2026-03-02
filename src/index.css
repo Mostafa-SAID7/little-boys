@@ -129,22 +129,17 @@
 
   html {
     overflow-x: hidden;
-    height: 100%;
   }
 
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
     overflow-x: hidden;
-    min-height: 100%;
-    position: relative;
   }
 
   #root {
     min-height: 100vh;
     overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -152,44 +147,34 @@
     @apply font-bold tracking-tight;
   }
 
-  /* Custom Scrollbar Styles - Only for desktop */
-  @media (min-width: 769px) {
-    ::-webkit-scrollbar {
-      width: 12px;
-      height: 12px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: hsl(var(--muted));
-      border-radius: 10px;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: hsl(var(--primary));
-      border-radius: 10px;
-      border: 2px solid hsl(var(--muted));
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: hsl(var(--primary) / 0.8);
-    }
-
-    /* Firefox Scrollbar */
-    * {
-      scrollbar-width: thin;
-      scrollbar-color: hsl(var(--primary)) hsl(var(--muted));
-    }
+  /* Custom Scrollbar Styles */
+  ::-webkit-scrollbar {
+    width: 10px;
   }
 
-  /* Hide custom scrollbar on mobile - use native */
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.8);
+  }
+
+  /* Firefox Scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary)) hsl(var(--muted));
+  }
+
+  /* Smaller scrollbar on mobile */
   @media (max-width: 768px) {
     ::-webkit-scrollbar {
-      display: none;
-    }
-    
-    * {
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
+      width: 6px;
     }
   }
 }
