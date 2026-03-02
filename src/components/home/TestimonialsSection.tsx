@@ -63,7 +63,7 @@ export function TestimonialsSection() {
                 <img 
                   src={testimonial.avatar} 
                   alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover"
+                  className="w-12 h-12 rounded-3xl object-cover"
                 />
                 <div>
                   <p className="font-display font-semibold text-foreground">
