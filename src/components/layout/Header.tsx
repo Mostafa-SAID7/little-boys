@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { useCart } from '@/context/CartContext';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 const navLinks = [
   { label: 'Shop All', href: '/products' },
@@ -65,6 +66,7 @@ export function Header() {
             <Button variant="ghost" size="icon" aria-label="Search">
               <Search className="h-5 w-5" />
             </Button>
+            <ThemeToggle />
             <Button variant="ghost" size="icon" className="hidden sm:flex" aria-label="Wishlist">
               <Heart className="h-5 w-5" />
             </Button>
