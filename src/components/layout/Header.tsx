@@ -39,12 +39,12 @@ export function Header() {
         </div>
 
         {/* Main header */}
-        <div className="flex items-center justify-between h-14 md:h-20 px-2 md:px-0">
+        <div className="flex items-center justify-between h-14 md:h-20">
           {/* Mobile menu button */}
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden h-9 w-9"
+            className="md:hidden h-9 w-9 -ml-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -52,11 +52,11 @@ export function Header() {
           </Button>
 
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-1.5 md:gap-2">
+          <Link to="/" className="flex items-center gap-1 md:gap-2 -ml-2 md:ml-0">
             <div className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded bg-primary text-primary-foreground font-bold text-base md:text-lg">
               LB
             </div>
-            <span className="font-display font-bold text-lg md:text-2xl text-foreground">
+            <span className="font-display font-bold text-lg md:text-2xl text-foreground whitespace-nowrap">
               Little <span className="text-primary">Boys</span>
             </span>
           </Link>
