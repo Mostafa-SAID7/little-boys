@@ -21,11 +21,11 @@ export function NewsletterSection() {
       <div className="container">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center max-w-6xl mx-auto">
           {/* Image */}
-          <div className="relative min-h-[250px] md:min-h-[350px]">
+          <div className="relative min-h-[250px] md:min-h-[300px] max-h-[400px]">
             <img
               src="/Family.png"
               alt="Happy family"
-              className="w-full h-auto object-contain"
+              className="w-full h-auto object-contain max-h-[400px]"
             />
           </div>
 
