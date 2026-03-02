@@ -2,6 +2,7 @@ import { X, Plus, Minus, ShoppingBag, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/context/CartContext';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 export function CartSidebar() {
   const { items, isOpen, closeCart, subtotal, removeItem, updateQuantity } = useCart();
@@ -116,9 +117,11 @@ export function CartSidebar() {
             <p className="text-xs text-muted-foreground mb-4">
               Shipping and taxes calculated at checkout
             </p>
-            <Button className="w-full" size="lg">
-              Checkout
-              <ArrowRight className="h-4 w-4 ml-2" />
+            <Button className="w-full" size="lg" asChild>
+              <Link to="/checkout">
+                Checkout
+                <ArrowRight className="h-4 w-4 ml-2" />
+              </Link>
             </Button>
             <Button variant="ghost" className="w-full mt-2" onClick={closeCart}>
               Continue Shopping
