@@ -7,7 +7,7 @@ const testimonials = [
     role: 'Mom of 2',
     content: 'The quality of the toys is amazing! My kids love everything we\'ve ordered. The age recommendations are spot-on.',
     rating: 5,
-    avatar: '👩',
+    avatar: '/c1.png',
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const testimonials = [
     role: 'Dad of 1',
     content: 'Fast shipping and beautiful packaging. The organic cotton clothes are so soft and perfect for my toddler\'s sensitive skin.',
     rating: 5,
-    avatar: '👨',
+    avatar: '/c2.png',
   },
   {
     id: 3,
@@ -23,7 +23,7 @@ const testimonials = [
     role: 'Grandma',
     content: 'Found the perfect gifts for my grandchildren. The book collection is wonderful and the wooden toys are heirloom quality.',
     rating: 5,
-    avatar: '👵',
+    avatar: '/c3.png',
   },
 ];
 
@@ -60,7 +60,11 @@ export function TestimonialsSection() {
 
               {/* Author */}
               <div className="flex items-center gap-3">
-                <span className="text-3xl">{testimonial.avatar}</span>
+                <img 
+                  src={testimonial.avatar} 
+                  alt={testimonial.name}
+                  className="w-12 h-12 rounded-full object-cover"
+                />
                 <div>
                   <p className="font-display font-semibold text-foreground">
                     {testimonial.name}
