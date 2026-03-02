@@ -67,13 +67,13 @@ export function HeroSection() {
               <div className="absolute -top-4 -left-4 md:-top-8 md:-left-8 animate-float z-10">
                 <img src="/m1.png" alt="Toy" className="w-28 h-28 md:w-56 md:h-56 object-contain drop-shadow-lg" />
               </div>
-              <div className="absolute -top-4 -right-4 md:-top-8 md:-right-8 animate-bounce-soft z-10" style={{ animationDelay: '1s' }}>
+              <div className="absolute -top-4 -right-4 md:-top-8 md:-right-8 animate-scale-pulse z-10" style={{ animationDelay: '1s' }}>
                 <img src="/m2.png" alt="Book" className="w-28 h-28 md:w-48 md:h-48 object-contain drop-shadow-lg" />
               </div>
               <div className="absolute -bottom-4 -left-4 md:-bottom-8 md:-left-8 animate-scale-pulse z-10" style={{ animationDelay: '2s' }}>
                 <img src="/m3.png" alt="Art" className="w-28 h-28 md:w-48 md:h-48 object-contain drop-shadow-lg" />
               </div>
-              <div className="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 animate-wiggle z-10" style={{ animationDelay: '0.5s' }}>
+              <div className="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 animate-float z-10" style={{ animationDelay: '0.5s' }}>
                 <img src="/m4.png" alt="Rainbow" className="w-28 h-28 md:w-56 md:h-56 object-contain drop-shadow-lg" />
               </div>
               
