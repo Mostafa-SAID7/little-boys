@@ -1,8 +1,28 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "little-boys",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "description": "A modern e-commerce platform for children's products built with React, TypeScript, and Tailwind CSS",
+  "author": "M.Said",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/little-boys.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/little-boys/issues"
+  },
+  "homepage": "https://github.com/yourusername/little-boys#readme",
+  "keywords": [
+    "ecommerce",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "vite",
+    "children-products",
+    "online-store"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",

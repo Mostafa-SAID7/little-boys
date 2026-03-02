@@ -152,8 +152,8 @@ const Cart = () => {
                     </div>
                   </div>
 
-                  <Button size="lg" className="w-full mb-3">
-                    Proceed to Checkout
+                  <Button size="lg" className="w-full mb-3" asChild>
+                    <Link to="/checkout">Proceed to Checkout</Link>
                   </Button>
                   <Button variant="outline" className="w-full" asChild>
                     <Link to="/products">Continue Shopping</Link>

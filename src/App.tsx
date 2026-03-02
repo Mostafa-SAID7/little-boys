@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
 import Wishlist from "./pages/Wishlist";
 import Profile from "./pages/Profile";
 import Search from "./pages/Search";
@@ -20,6 +21,7 @@ import About from "./pages/About";
 import GiftCards from "./pages/GiftCards";
 import Sustainability from "./pages/Sustainability";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
@@ -39,6 +41,7 @@ const App = () => (
               <Route path="/products" element={<Products />} />
               <Route path="/products/:slug" element={<ProductDetail />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/checkout" element={<Checkout />} />
               <Route path="/wishlist" element={<Wishlist />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/search" element={<Search />} />
@@ -50,6 +53,7 @@ const App = () => (
               <Route path="/gift-cards" element={<GiftCards />} />
               <Route path="/sustainability" element={<Sustainability />} />
               <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
