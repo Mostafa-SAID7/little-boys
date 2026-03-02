@@ -36,7 +36,7 @@ export function TestimonialsSection() {
             Loved by Families
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto">
-            Join thousands of happy parents who trust LittleWonders
+            Join thousands of happy parents who trust Little Boys
           </p>
         </div>
 

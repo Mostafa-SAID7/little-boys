@@ -20,7 +20,7 @@ const About = () => {
               Our Story
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              LittleWonders was founded by parents who believe that childhood should be filled 
+              Little Boys was founded by parents who believe that childhood should be filled 
               with wonder, joy, and discovery. We curate the finest toys, clothes, and books 
               that inspire imagination and support healthy development.
             </p>
