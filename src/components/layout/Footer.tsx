@@ -115,7 +115,16 @@ export function Footer() {
         {/* Bottom */}
         <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2024 Little Boys. All rights reserved.
+            © 2024 - {new Date().getFullYear()}{' '}
+            <a 
+              href="https://m-said-portfolio.netlify.app/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors font-medium"
+            >
+              M.Said
+            </a>
+            . All rights reserved.
           </p>
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
             <Link to="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
