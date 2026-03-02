@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Instagram, Facebook, Youtube, Lock } from 'lucide-react';
 
 const footerLinks = {
   shop: [
@@ -47,13 +48,13 @@ export function Footer() {
             </p>
             <div className="flex gap-4">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Instagram">
-                📸
+                <Instagram className="h-5 w-5" />
               </a>
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Facebook">
-                📘
+                <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Pinterest">
-                📌
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors" aria-label="YouTube">
+                <Youtube className="h-5 w-5" />
               </a>
             </div>
           </div>
@@ -130,7 +131,8 @@ export function Footer() {
             <Link to="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
             <Link to="/terms" className="hover:text-primary transition-colors">Terms</Link>
             <span className="flex items-center gap-1">
-              🔒 Secure payments
+              <Lock className="h-4 w-4" />
+              Secure payments
             </span>
           </div>
         </div>
