@@ -47,7 +47,7 @@ export function ProductCard({ product, className, viewMode = 'grid' }: ProductCa
       >
         <div className="flex gap-4">
           {/* Image - full height on the left */}
-          <Link to={`/products/${product.slug}`} className="relative flex-shrink-0 w-32">
+          <Link to={`/products/${product.slug}`} className="relative flex-shrink-0 w-48">
             <div className="relative h-full bg-muted overflow-hidden">
               <img
                 src={product.images[0]}
