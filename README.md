@@ -59,7 +59,7 @@ Built with modern web technologies. See [docs/TECHNOLOGIES.md](docs/TECHNOLOGIES
 
 ### Quick Start
 
-See [QUICK_START.md](QUICK_START.md) for a 5-minute setup guide.
+See [QUICK_START.md](docs/QUICK_START.md) for a 5-minute setup guide.
 
 ### Prerequisites
 
@@ -90,7 +90,7 @@ npm run preview
 
 The app will be available at `http://localhost:8080`
 
-For detailed setup instructions, see [PROJECT_SETUP.md](PROJECT_SETUP.md)
+For detailed setup instructions, see [PROJECT_SETUP.md](docs/PROJECT_SETUP.md)
 
 ### Deployment
 
@@ -168,18 +168,21 @@ little-boys/
 
 Comprehensive documentation is available in the `docs/` folder:
 
+- [QUICK_START.md](docs/QUICK_START.md) - 5-minute quick start guide
+- [PROJECT_SETUP.md](docs/PROJECT_SETUP.md) - Complete setup guide
 - [FEATURES.md](docs/FEATURES.md) - Complete feature list
 - [TECHNOLOGIES.md](docs/TECHNOLOGIES.md) - Technology stack details
 - [STRUCTURE.md](docs/STRUCTURE.md) - Project structure guide
 - [STYLES.md](docs/STYLES.md) - Styling guidelines and theme
 - [USE_CASES.md](docs/USE_CASES.md) - Common use cases and examples
-- [DEPLOYMENT.md](DEPLOYMENT.md) - Deployment guide for various platforms
-- [PROJECT_SETUP.md](PROJECT_SETUP.md) - Complete setup guide
+- [DEPLOYMENT.md](docs/DEPLOYMENT.md) - Deployment guide for various platforms
 - [CHANGELOG.md](docs/CHANGELOG.md) - Version history
 - [CONTRIBUTING.md](docs/CONTRIBUTING.md) - Contribution guidelines
-- [CONTRIBUTORS.md](CONTRIBUTORS.md) - Project contributors
+- [CONTRIBUTORS.md](docs/CONTRIBUTORS.md) - Project contributors
 - [CODE_OF_CONDUCT.md](docs/CODE_OF_CONDUCT.md) - Community guidelines
 - [SECURITY.md](docs/SECURITY.md) - Security policies
+- [FILES_CREATED.md](docs/FILES_CREATED.md) - Complete file inventory
+- [COMMIT_SUMMARY.md](docs/COMMIT_SUMMARY.md) - Latest changes summary
 
 ## 🎨 Styling
 

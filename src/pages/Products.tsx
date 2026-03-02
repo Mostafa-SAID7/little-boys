@@ -204,16 +204,18 @@ const Products = () => {
                 size="icon"
                 onClick={() => setViewMode('grid')}
                 aria-label="Grid view"
+                className="h-9 w-9"
               >
-                <Grid3X3 className="h-4 w-4" />
+                <Grid3X3 className="h-5 w-5" />
               </Button>
               <Button
                 variant={viewMode === 'list' ? 'soft' : 'ghost'}
                 size="icon"
                 onClick={() => setViewMode('list')}
                 aria-label="List view"
+                className="h-9 w-9"
               >
-                <List className="h-4 w-4" />
+                <List className="h-5 w-5" />
               </Button>
             </div>
           </div>
