@@ -53,8 +53,8 @@ export function HeroSection() {
           </div>
 
           {/* Hero visual */}
-          <div className="relative">
-            <div className="relative aspect-square max-w-md mx-auto">
+          <div className="relative px-4 md:px-0">
+            <div className="relative aspect-square max-w-md mx-auto overflow-hidden">
               {/* Decorative circles */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-full h-full rounded bg-secondary/30 animate-pulse" />
@@ -64,26 +64,26 @@ export function HeroSection() {
               </div>
               
               {/* Floating elements */}
-              <div className="absolute -top-8 -left-8 animate-float z-10">
-                <img src="/m1.png" alt="Toy" className="w-40 h-40 md:w-56 md:h-56 object-contain" />
+              <div className="absolute top-0 left-0 md:-top-8 md:-left-8 animate-float z-10">
+                <img src="/m1.png" alt="Toy" className="w-24 h-24 md:w-56 md:h-56 object-contain" />
               </div>
-              <div className="absolute -top-8 -right-8 animate-bounce-soft z-10" style={{ animationDelay: '1s' }}>
-                <img src="/m2.png" alt="Book" className="w-36 h-36 md:w-48 md:h-48 object-contain" />
+              <div className="absolute top-0 right-0 md:-top-8 md:-right-8 animate-bounce-soft z-10" style={{ animationDelay: '1s' }}>
+                <img src="/m2.png" alt="Book" className="w-20 h-20 md:w-48 md:h-48 object-contain" />
               </div>
-              <div className="absolute -bottom-8 -left-8 animate-scale-pulse z-10" style={{ animationDelay: '2s' }}>
-                <img src="/m3.png" alt="Art" className="w-36 h-36 md:w-48 md:h-48 object-contain" />
+              <div className="absolute bottom-0 left-0 md:-bottom-8 md:-left-8 animate-scale-pulse z-10" style={{ animationDelay: '2s' }}>
+                <img src="/m3.png" alt="Art" className="w-20 h-20 md:w-48 md:h-48 object-contain" />
               </div>
-              <div className="absolute -bottom-8 -right-8 animate-wiggle z-10" style={{ animationDelay: '0.5s' }}>
-                <img src="/m4.png" alt="Rainbow" className="w-40 h-40 md:w-56 md:h-56 object-contain" />
+              <div className="absolute bottom-0 right-0 md:-bottom-8 md:-right-8 animate-wiggle z-10" style={{ animationDelay: '0.5s' }}>
+                <img src="/m4.png" alt="Rainbow" className="w-24 h-24 md:w-56 md:h-56 object-contain" />
               </div>
               
               {/* Central content */}
               <div className="absolute inset-0 flex items-center justify-center z-0">
-                <div className="bg-card rounded shadow-float p-8 text-center transform rotate-3 hover:rotate-0 transition-transform duration-300">
-                  <span className="text-7xl block mb-4">🎁</span>
-                  <p className="font-display font-bold text-xl text-foreground">Up to</p>
-                  <p className="font-display font-bold text-4xl text-primary">30% OFF</p>
-                  <p className="text-muted-foreground text-sm mt-1">Spring Sale</p>
+                <div className="bg-card rounded shadow-float p-4 md:p-8 text-center transform rotate-3 hover:rotate-0 transition-transform duration-300">
+                  <span className="text-4xl md:text-7xl block mb-2 md:mb-4">🎁</span>
+                  <p className="font-display font-bold text-base md:text-xl text-foreground">Up to</p>
+                  <p className="font-display font-bold text-2xl md:text-4xl text-primary">30% OFF</p>
+                  <p className="text-muted-foreground text-xs md:text-sm mt-1">Spring Sale</p>
                 </div>
               </div>
             </div>
