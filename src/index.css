@@ -127,13 +127,21 @@
     @apply border-border;
   }
 
+  html {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
     overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
   }
 
-  html {
+  #root {
+    min-height: 100vh;
     overflow-x: hidden;
   }
 
@@ -167,6 +175,13 @@
   * {
     scrollbar-width: thin;
     scrollbar-color: hsl(var(--primary)) hsl(var(--muted));
+  }
+
+  /* Hide scrollbar on mobile for cleaner look */
+  @media (max-width: 768px) {
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
   }
 }
 
