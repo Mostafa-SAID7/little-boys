@@ -23,7 +23,7 @@ export function NewsletterSection() {
           {/* Image */}
           <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=800&auto=format&fit=crop&q=80"
+              src="/Family.png"
               alt="Happy family"
               className="w-full h-full object-cover"
             />
