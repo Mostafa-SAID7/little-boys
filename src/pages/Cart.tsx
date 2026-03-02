@@ -32,11 +32,11 @@ const Cart = () => {
           <Breadcrumbs items={[{ label: 'Shopping Cart' }]} />
         </div>
 
-        <section className="container pb-16">
+        <section className="container py-8">
           <h1 className="font-display text-3xl font-bold mb-8">Shopping Cart</h1>
 
           {items.length === 0 ? (
-            <div className="text-center py-16">
+            <div className="text-center py-8">
               <span className="text-6xl block mb-4">🛒</span>
               <h2 className="font-display text-xl font-semibold mb-2">Your cart is empty</h2>
               <p className="text-muted-foreground mb-6">
@@ -53,13 +53,13 @@ const Cart = () => {
                 {items.map(({ product, quantity }) => (
                   <div
                     key={product.id}
-                    className="bg-card rounded-2xl p-4 shadow-soft flex gap-4"
+                    className="bg-card rounded p-4 shadow-soft flex gap-4"
                   >
                     <Link to={`/product/${product.slug}`} className="flex-shrink-0">
                       <img
                         src={product.images[0]}
                         alt={product.title}
-                        className="h-24 w-24 md:h-32 md:w-32 rounded-xl object-cover"
+                        className="h-24 w-24 md:h-32 md:w-32 rounded object-cover"
                       />
                     </Link>
                     <div className="flex-1 min-w-0">
@@ -112,7 +112,7 @@ const Cart = () => {
 
               {/* Order summary */}
               <div className="lg:col-span-1">
-                <div className="bg-card rounded-2xl p-6 shadow-soft sticky top-24">
+                <div className="bg-card rounded p-6 shadow-soft sticky top-24">
                   <h2 className="font-display text-xl font-bold mb-6">Order Summary</h2>
 
                   {/* Promo code */}
@@ -141,7 +141,7 @@ const Cart = () => {
                       <span>{shipping === 0 ? 'FREE' : `$${shipping.toFixed(2)}`}</span>
                     </div>
                     {subtotal < 50 && (
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted rounded-lg p-3">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted rounded p-3">
                         <Truck className="h-4 w-4" />
                         <span>Add ${(50 - subtotal).toFixed(2)} for free shipping!</span>
                       </div>

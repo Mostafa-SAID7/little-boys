@@ -21,7 +21,7 @@ const Wishlist = () => {
           <Breadcrumbs items={[{ label: 'Wishlist' }]} />
         </div>
 
-        <section className="container pb-16">
+        <section className="container py-8">
           <div className="flex items-center justify-between mb-8">
             <div>
               <h1 className="font-display text-3xl font-bold mb-2">My Wishlist</h1>
@@ -36,7 +36,7 @@ const Wishlist = () => {
           </div>
 
           {wishlistItems.length === 0 ? (
-            <div className="text-center py-16">
+            <div className="text-center py-8">
               <span className="text-6xl block mb-4">💝</span>
               <h2 className="font-display text-xl font-semibold mb-2">
                 Your wishlist is empty

@@ -15,9 +15,9 @@ const Returns = () => {
           <Breadcrumbs items={[{ label: 'Returns & Exchanges' }]} />
         </div>
 
-        <section className="container pb-16">
+        <section className="container py-8">
           <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
+            <div className="text-center mb-8">
               <span className="text-5xl block mb-4">↩️</span>
               <h1 className="font-display text-4xl font-bold mb-4">Returns & Exchanges</h1>
               <p className="text-muted-foreground">
@@ -26,18 +26,18 @@ const Returns = () => {
             </div>
 
             {/* Quick stats */}
-            <div className="grid md:grid-cols-3 gap-4 mb-12">
-              <div className="bg-secondary/10 rounded-2xl p-6 text-center">
+            <div className="grid md:grid-cols-3 gap-4 mb-8">
+              <div className="bg-secondary/10 rounded p-6 text-center">
                 <RotateCcw className="h-8 w-8 text-secondary mx-auto mb-3" />
                 <p className="font-display font-bold text-2xl">30 Days</p>
                 <p className="text-sm text-muted-foreground">Return Window</p>
               </div>
-              <div className="bg-primary/10 rounded-2xl p-6 text-center">
+              <div className="bg-primary/10 rounded p-6 text-center">
                 <CheckCircle className="h-8 w-8 text-primary mx-auto mb-3" />
                 <p className="font-display font-bold text-2xl">Free</p>
                 <p className="text-sm text-muted-foreground">US Returns</p>
               </div>
-              <div className="bg-accent/30 rounded-2xl p-6 text-center">
+              <div className="bg-accent/30 rounded p-6 text-center">
                 <HelpCircle className="h-8 w-8 text-accent-foreground mx-auto mb-3" />
                 <p className="font-display font-bold text-2xl">24/7</p>
                 <p className="text-sm text-muted-foreground">Support Available</p>
@@ -45,7 +45,7 @@ const Returns = () => {
             </div>
 
             {/* Return policy */}
-            <div className="bg-card rounded-2xl p-8 shadow-soft mb-8">
+            <div className="bg-card rounded p-8 shadow-soft mb-8">
               <h2 className="font-display text-2xl font-bold mb-6">Return Policy</h2>
               
               <div className="space-y-4">
@@ -69,7 +69,7 @@ const Returns = () => {
             </div>
 
             {/* Non-returnable */}
-            <div className="bg-muted rounded-2xl p-8 mb-8">
+            <div className="bg-muted rounded p-8 mb-8">
               <h2 className="font-display text-2xl font-bold mb-6">Non-Returnable Items</h2>
               
               <div className="space-y-4">
@@ -93,33 +93,33 @@ const Returns = () => {
             </div>
 
             {/* How to return */}
-            <div className="bg-card rounded-2xl p-8 shadow-soft">
+            <div className="bg-card rounded p-8 shadow-soft">
               <h2 className="font-display text-2xl font-bold mb-6">How to Start a Return</h2>
               
               <ol className="space-y-4 mb-6">
                 <li className="flex gap-3">
-                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</span>
+                  <span className="flex-shrink-0 w-8 h-8 rounded bg-primary text-primary-foreground flex items-center justify-center font-bold">1</span>
                   <div>
                     <p className="font-semibold">Log into your account</p>
                     <p className="text-sm text-muted-foreground">Go to your order history</p>
                   </div>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</span>
+                  <span className="flex-shrink-0 w-8 h-8 rounded bg-primary text-primary-foreground flex items-center justify-center font-bold">2</span>
                   <div>
                     <p className="font-semibold">Select items to return</p>
                     <p className="text-sm text-muted-foreground">Choose the items and reason for return</p>
                   </div>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</span>
+                  <span className="flex-shrink-0 w-8 h-8 rounded bg-primary text-primary-foreground flex items-center justify-center font-bold">3</span>
                   <div>
                     <p className="font-semibold">Print shipping label</p>
                     <p className="text-sm text-muted-foreground">Free prepaid label for US orders</p>
                   </div>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">4</span>
+                  <span className="flex-shrink-0 w-8 h-8 rounded bg-primary text-primary-foreground flex items-center justify-center font-bold">4</span>
                   <div>
                     <p className="font-semibold">Drop off package</p>
                     <p className="text-sm text-muted-foreground">Take it to any carrier location</p>

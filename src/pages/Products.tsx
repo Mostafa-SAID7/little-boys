@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -7,7 +7,7 @@ import { ProductCard } from '@/components/products/ProductCard';
 import { AgeFilterBar } from '@/components/products/AgeFilterBar';
 import { products, categories, ageFilters } from '@/data/products';
 import { Button } from '@/components/ui/button';
-import { SlidersHorizontal, Grid3X3, List, ChevronDown } from 'lucide-react';
+import { SlidersHorizontal, Grid3X3, List, ChevronDown, SearchX } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const Products = () => {
@@ -19,6 +19,12 @@ const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(categoryParam);
   const [sortBy, setSortBy] = useState('featured');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [sortDropdownOpen, setSortDropdownOpen] = useState(false);
+
+  // Update selected category when URL parameter changes
+  useEffect(() => {
+    setSelectedCategory(categoryParam);
+  }, [categoryParam]);
 
   const filteredProducts = useMemo(() => {
     let result = [...products];
@@ -87,12 +93,14 @@ const Products = () => {
         {/* Page header */}
         <div className="bg-background border-b border-border py-8">
           <div className="container">
-            <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              {getPageTitle()}
-            </h1>
-            <p className="text-muted-foreground">
-              {filteredProducts.length} products
-            </p>
+            <div className="flex items-center justify-between">
+              <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground">
+                {getPageTitle()}
+              </h1>
+              <div className="bg-primary text-primary-foreground border-2 border-primary-foreground/20 rounded px-4 py-2 font-bold text-lg">
+                {filteredProducts.length}
+              </div>
+            </div>
           </div>
         </div>
 
@@ -103,11 +111,12 @@ const Products = () => {
           </div>
 
           {/* Category pills */}
-          <div className="flex flex-wrap gap-2 mb-6">
+          <div className="flex flex-wrap gap-3 mb-6">
             <Button
               variant={selectedCategory === null ? 'default' : 'ghost'}
               size="sm"
               onClick={() => setSelectedCategory(null)}
+              className="h-auto py-3 px-4"
             >
               All
             </Button>
@@ -117,28 +126,76 @@ const Products = () => {
                 variant={selectedCategory === cat.slug ? 'default' : 'ghost'}
                 size="sm"
                 onClick={() => setSelectedCategory(cat.slug)}
+                className="flex items-center justify-between gap-4 h-auto py-3 px-4 min-w-[200px]"
               >
-                {cat.icon} {cat.name}
+                <div className="flex items-center gap-2">
+                  <img 
+                    src={cat.image} 
+                    alt={cat.name}
+                    className="w-8 h-8 object-contain"
+                  />
+                  <span className="font-semibold">{cat.name}</span>
+                </div>
+                <span className="bg-primary text-primary-foreground border-2 border-primary-foreground/20 rounded px-3 py-1 text-xs font-bold">
+                  {cat.productCount}
+                </span>
               </Button>
             ))}
           </div>
 
           {/* Sort & view controls */}
           <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center gap-2">
-              <SlidersHorizontal className="h-4 w-4 text-muted-foreground" />
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                className="bg-transparent text-sm font-medium focus:outline-none cursor-pointer"
+            <div className="relative">
+              <Button
+                variant="ghost"
+                className="flex items-center gap-2"
+                onClick={() => setSortDropdownOpen(!sortDropdownOpen)}
               >
-                <option value="featured">Featured</option>
-                <option value="newest">Newest</option>
-                <option value="price-low">Price: Low to High</option>
-                <option value="price-high">Price: High to Low</option>
-                <option value="rating">Top Rated</option>
-              </select>
-              <ChevronDown className="h-4 w-4 text-muted-foreground" />
+                <SlidersHorizontal className="h-4 w-4" />
+                <span className="text-sm font-medium">
+                  {sortBy === 'featured' && 'Featured'}
+                  {sortBy === 'newest' && 'Newest'}
+                  {sortBy === 'price-low' && 'Price: Low to High'}
+                  {sortBy === 'price-high' && 'Price: High to Low'}
+                  {sortBy === 'rating' && 'Top Rated'}
+                </span>
+                <ChevronDown className={cn("h-4 w-4 transition-transform", sortDropdownOpen && "rotate-180")} />
+              </Button>
+              
+              {/* Dropdown Menu */}
+              {sortDropdownOpen && (
+                <>
+                  <div
+                    className="fixed inset-0 z-10"
+                    onClick={() => setSortDropdownOpen(false)}
+                  />
+                  <div className="absolute top-full left-0 mt-2 w-56 bg-card border border-border rounded shadow-lg z-20 overflow-hidden">
+                    {[
+                      { value: 'featured', label: 'Featured' },
+                      { value: 'newest', label: 'Newest' },
+                      { value: 'price-low', label: 'Price: Low to High' },
+                      { value: 'price-high', label: 'Price: High to Low' },
+                      { value: 'rating', label: 'Top Rated' },
+                    ].map((option) => (
+                      <button
+                        key={option.value}
+                        onClick={() => {
+                          setSortBy(option.value);
+                          setSortDropdownOpen(false);
+                        }}
+                        className={cn(
+                          "w-full text-left px-4 py-2.5 text-sm transition-colors",
+                          sortBy === option.value
+                            ? "bg-primary text-primary-foreground font-medium"
+                            : "text-foreground hover:bg-muted"
+                        )}
+                      >
+                        {option.label}
+                      </button>
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
 
             <div className="flex items-center gap-1">
@@ -163,10 +220,30 @@ const Products = () => {
 
           {/* Product grid */}
           {filteredProducts.length === 0 ? (
-            <div className="text-center py-16">
-              <span className="text-6xl block mb-4">🔍</span>
-              <h2 className="font-display text-xl font-semibold mb-2">No products found</h2>
-              <p className="text-muted-foreground">Try adjusting your filters</p>
+            <div className="text-center py-20">
+              <div className="flex items-center justify-center mb-6">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-primary/10 rounded blur-2xl" />
+                  <div className="relative flex items-center justify-center w-24 h-24 rounded bg-muted">
+                    <SearchX className="h-12 w-12 text-muted-foreground" />
+                  </div>
+                </div>
+              </div>
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">
+                No products found
+              </h2>
+              <p className="text-muted-foreground mb-8 max-w-md mx-auto">
+                We couldn't find any products matching your filters. Try adjusting your search criteria.
+              </p>
+              <Button
+                onClick={() => {
+                  setSelectedCategory(null);
+                  setSelectedAge(null);
+                }}
+                variant="default"
+              >
+                Clear All Filters
+              </Button>
             </div>
           ) : (
             <div

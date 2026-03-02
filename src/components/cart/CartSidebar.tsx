@@ -53,9 +53,9 @@ export function CartSidebar() {
               {items.map(({ product, quantity }) => (
                 <li
                   key={product.id}
-                  className="flex gap-4 p-3 bg-muted rounded-xl animate-fade-in"
+                  className="flex gap-4 p-3 bg-muted rounded animate-fade-in"
                 >
-                  <div className="h-20 w-20 rounded-lg bg-card overflow-hidden flex-shrink-0">
+                  <div className="h-20 w-20 rounded bg-card overflow-hidden flex-shrink-0">
                     <img
                       src={product.images[0]}
                       alt={product.title}

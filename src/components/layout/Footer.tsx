@@ -31,12 +31,12 @@ const footerLinks = {
 export function Footer() {
   return (
     <footer className="bg-muted border-t border-border">
-      <div className="container py-12 md:py-16">
+      <div className="container py-8 md:py-8">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary text-primary-foreground font-bold text-lg">
+              <div className="flex items-center justify-center w-10 h-10 rounded bg-primary text-primary-foreground font-bold text-lg">
                 LB
               </div>
               <span className="font-display font-bold text-xl text-foreground">
@@ -114,7 +114,7 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
             © 2024 - {new Date().getFullYear()}{' '}
             <a 

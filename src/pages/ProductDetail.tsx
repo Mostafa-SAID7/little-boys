@@ -80,8 +80,8 @@ const ProductDetail = () => {
         </div>
 
         {/* Product section */}
-        <section className="container pb-12">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+        <section className="container py-8">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-8">
             {/* Image gallery */}
             <div>
               <ImageGallery images={product.images} productTitle={product.title} />

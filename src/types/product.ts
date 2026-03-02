@@ -27,6 +27,7 @@ export interface Category {
   name: string;
   slug: string;
   icon: string;
+  image?: string;
   color: string;
   productCount: number;
 }

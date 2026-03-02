@@ -23,7 +23,7 @@ export function SizeSelector({ sizes, selectedSize, onSelect, outOfStock = [] }:
               onClick={() => !isOutOfStock && onSelect(size)}
               disabled={isOutOfStock}
               className={cn(
-                "min-w-[3rem] h-10 px-4 rounded-lg border-2 font-medium text-sm transition-all",
+                "min-w-[3rem] h-10 px-4 rounded border-2 font-medium text-sm transition-all",
                 selectedSize === size
                   ? "border-primary bg-primary text-primary-foreground"
                   : isOutOfStock

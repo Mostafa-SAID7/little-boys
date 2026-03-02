@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ShoppingBag, Heart, Search, Menu, X, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/context/CartContext';
@@ -18,6 +18,12 @@ const navLinks = [
 export function Header() {
   const { itemCount, toggleCart } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const isActiveLink = (href: string) => {
+    const currentPath = location.pathname + location.search;
+    return currentPath === href || (href !== '/products' && currentPath.startsWith(href));
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
@@ -42,7 +48,7 @@ export function Header() {
 
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary text-primary-foreground font-bold text-lg">
+            <div className="flex items-center justify-center w-10 h-10 rounded bg-primary text-primary-foreground font-bold text-lg">
               LB
             </div>
             <span className="font-display font-bold text-xl md:text-2xl text-foreground">
@@ -56,7 +62,12 @@ export function Header() {
               <Link
                 key={link.href}
                 to={link.href}
-                className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors rounded-lg hover:bg-muted"
+                className={cn(
+                  "px-4 py-2 text-sm font-medium transition-colors rounded",
+                  isActiveLink(link.href)
+                    ? "text-primary bg-primary/10 font-semibold"
+                    : "text-foreground/80 hover:text-primary hover:bg-muted"
+                )}
               >
                 {link.label}
               </Link>
@@ -65,15 +76,21 @@ export function Header() {
 
           {/* Actions */}
           <div className="flex items-center gap-1">
-            <Button variant="ghost" size="icon" aria-label="Search">
-              <Search className="h-5 w-5" />
+            <Button variant="ghost" size="icon" asChild aria-label="Search">
+              <Link to="/search">
+                <Search className="h-5 w-5" />
+              </Link>
             </Button>
             <ThemeToggle />
-            <Button variant="ghost" size="icon" className="hidden sm:flex" aria-label="Wishlist">
-              <Heart className="h-5 w-5" />
+            <Button variant="ghost" size="icon" className="hidden sm:flex" asChild aria-label="Wishlist">
+              <Link to="/wishlist">
+                <Heart className="h-5 w-5" />
+              </Link>
             </Button>
-            <Button variant="ghost" size="icon" className="hidden sm:flex" aria-label="Account">
-              <User className="h-5 w-5" />
+            <Button variant="ghost" size="icon" className="hidden sm:flex" asChild aria-label="Account">
+              <Link to="/profile">
+                <User className="h-5 w-5" />
+              </Link>
             </Button>
             <Button
               variant="ghost"
@@ -84,7 +101,7 @@ export function Header() {
             >
               <ShoppingBag className="h-5 w-5" />
               {itemCount > 0 && (
-                <span className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-primary text-primary-foreground text-xs font-bold flex items-center justify-center animate-bounce-in">
+                <span className="absolute -top-1 -right-1 h-5 w-5 rounded bg-primary text-primary-foreground text-xs font-bold flex items-center justify-center animate-bounce-in">
                   {itemCount}
                 </span>
               )}
@@ -104,7 +121,12 @@ export function Header() {
               <Link
                 key={link.href}
                 to={link.href}
-                className="px-4 py-3 text-base font-medium text-foreground/80 hover:text-primary hover:bg-muted rounded-lg transition-colors"
+                className={cn(
+                  "px-4 py-3 text-base font-medium transition-colors rounded",
+                  isActiveLink(link.href)
+                    ? "text-primary bg-primary/10 font-semibold"
+                    : "text-foreground/80 hover:text-primary hover:bg-muted"
+                )}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.label}

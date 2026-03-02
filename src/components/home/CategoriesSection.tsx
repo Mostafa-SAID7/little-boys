@@ -3,7 +3,7 @@ import { CategoryCard } from '@/components/products/CategoryCard';
 
 export function CategoriesSection() {
   return (
-    <section className="py-16 md:py-20">
+    <section className="py-8 md:py-20">
       <div className="container">
         <div className="text-center mb-10">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">

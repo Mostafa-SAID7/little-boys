@@ -29,9 +29,9 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="py-16 md:py-20">
+    <section className="py-8 md:py-20">
       <div className="container">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
             Loved by Families
           </h2>
@@ -44,7 +44,7 @@ export function TestimonialsSection() {
           {testimonials.map((testimonial) => (
             <article
               key={testimonial.id}
-              className="bg-card rounded-2xl p-6 shadow-soft hover:shadow-card transition-shadow duration-300"
+              className="bg-card rounded p-6 shadow-soft hover:shadow-card transition-shadow duration-300 flex flex-col"
             >
               {/* Rating */}
               <div className="flex gap-1 mb-4">
@@ -54,16 +54,16 @@ export function TestimonialsSection() {
               </div>
 
               {/* Content */}
-              <p className="text-foreground/80 mb-6 leading-relaxed">
+              <p className="text-foreground/80 mb-6 leading-relaxed flex-1">
                 "{testimonial.content}"
               </p>
 
-              {/* Author */}
-              <div className="flex items-center gap-3">
+              {/* Author - Always at bottom */}
+              <div className="flex items-center gap-3 mt-auto">
                 <img 
                   src={testimonial.avatar} 
                   alt={testimonial.name}
-                  className="w-12 h-12 rounded-3xl object-cover"
+                  className="w-12 h-12 rounded object-contain border-2 border-primary"
                 />
                 <div>
                   <p className="font-display font-semibold text-foreground">

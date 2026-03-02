@@ -19,7 +19,7 @@ export function AgeFilterBar({ selectedAge, onSelect }: AgeFilterBarProps) {
       <button
         onClick={() => onSelect(null)}
         className={cn(
-          "px-5 py-2.5 rounded-full font-display font-semibold text-sm transition-all duration-200",
+          "px-5 py-2.5 rounded font-display font-semibold text-sm transition-all duration-200",
           selectedAge === null
             ? "bg-primary text-primary-foreground shadow-soft"
             : "bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground"
@@ -32,7 +32,7 @@ export function AgeFilterBar({ selectedAge, onSelect }: AgeFilterBarProps) {
           key={filter.id}
           onClick={() => onSelect(filter.id)}
           className={cn(
-            "px-5 py-2.5 rounded-full font-display font-semibold text-sm transition-all duration-200 flex items-center gap-2",
+            "px-5 py-2.5 rounded font-display font-semibold text-sm transition-all duration-200 flex items-center gap-2",
             selectedAge === filter.id
               ? `age-badge-${filter.id} shadow-soft`
               : "bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground"

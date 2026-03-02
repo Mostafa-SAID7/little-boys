@@ -19,7 +19,7 @@ export function RelatedProducts({ currentProduct }: RelatedProductsProps) {
   if (relatedProducts.length === 0) return null;
 
   return (
-    <section className="py-12 md:py-16">
+    <section className="py-8 md:py-8">
       <div className="container">
         <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8">
           You May Also Like

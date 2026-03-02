@@ -13,9 +13,9 @@ const Shipping = () => {
           <Breadcrumbs items={[{ label: 'Shipping Information' }]} />
         </div>
 
-        <section className="container pb-16">
+        <section className="container py-8">
           <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
+            <div className="text-center mb-8">
               <span className="text-5xl block mb-4">📦</span>
               <h1 className="font-display text-4xl font-bold mb-4">Shipping Information</h1>
               <p className="text-muted-foreground">
@@ -24,26 +24,26 @@ const Shipping = () => {
             </div>
 
             {/* Shipping options */}
-            <div className="grid md:grid-cols-2 gap-6 mb-12">
-              <div className="bg-card rounded-2xl p-6 shadow-soft">
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <div className="bg-card rounded p-6 shadow-soft">
                 <Truck className="h-8 w-8 text-primary mb-4" />
                 <h3 className="font-display text-lg font-bold mb-2">Standard Shipping</h3>
                 <p className="text-muted-foreground text-sm mb-3">5-7 business days</p>
                 <p className="font-semibold">$5.99 or FREE over $50</p>
               </div>
-              <div className="bg-card rounded-2xl p-6 shadow-soft border-2 border-primary">
+              <div className="bg-card rounded p-6 shadow-soft border-2 border-primary">
                 <Package className="h-8 w-8 text-primary mb-4" />
                 <h3 className="font-display text-lg font-bold mb-2">Express Shipping</h3>
                 <p className="text-muted-foreground text-sm mb-3">2-3 business days</p>
                 <p className="font-semibold">$12.99</p>
               </div>
-              <div className="bg-card rounded-2xl p-6 shadow-soft">
+              <div className="bg-card rounded p-6 shadow-soft">
                 <Clock className="h-8 w-8 text-primary mb-4" />
                 <h3 className="font-display text-lg font-bold mb-2">Next Day Delivery</h3>
                 <p className="text-muted-foreground text-sm mb-3">Order by 2pm local time</p>
                 <p className="font-semibold">$19.99</p>
               </div>
-              <div className="bg-card rounded-2xl p-6 shadow-soft">
+              <div className="bg-card rounded p-6 shadow-soft">
                 <Globe className="h-8 w-8 text-primary mb-4" />
                 <h3 className="font-display text-lg font-bold mb-2">International</h3>
                 <p className="text-muted-foreground text-sm mb-3">10-21 business days</p>
@@ -52,7 +52,7 @@ const Shipping = () => {
             </div>
 
             {/* Details */}
-            <div className="bg-muted rounded-2xl p-8 space-y-6">
+            <div className="bg-muted rounded p-8 space-y-6">
               <h2 className="font-display text-2xl font-bold">Shipping Details</h2>
               
               <div>

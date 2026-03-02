@@ -23,7 +23,7 @@ export function ImageGallery({ images, productTitle }: ImageGalleryProps) {
   return (
     <div className="space-y-4">
       {/* Main image */}
-      <div className="relative aspect-square bg-muted rounded-2xl overflow-hidden group">
+      <div className="relative aspect-square bg-muted rounded overflow-hidden group">
         <img
           src={images[selectedIndex]}
           alt={`${productTitle} - Image ${selectedIndex + 1}`}
@@ -36,7 +36,7 @@ export function ImageGallery({ images, productTitle }: ImageGalleryProps) {
 
         {/* Zoom indicator */}
         <button
-          className="absolute top-4 right-4 h-10 w-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+          className="absolute top-4 right-4 h-10 w-10 rounded bg-background/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
           onClick={() => setIsZoomed(!isZoomed)}
           aria-label="Zoom image"
         >
@@ -49,7 +49,7 @@ export function ImageGallery({ images, productTitle }: ImageGalleryProps) {
             <Button
               variant="ghost"
               size="icon"
-              className="absolute left-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute left-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded bg-background/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity"
               onClick={handlePrevious}
               aria-label="Previous image"
             >
@@ -58,7 +58,7 @@ export function ImageGallery({ images, productTitle }: ImageGalleryProps) {
             <Button
               variant="ghost"
               size="icon"
-              className="absolute right-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute right-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded bg-background/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity"
               onClick={handleNext}
               aria-label="Next image"
             >
@@ -69,7 +69,7 @@ export function ImageGallery({ images, productTitle }: ImageGalleryProps) {
 
         {/* Image counter */}
         {images.length > 1 && (
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-background/80 backdrop-blur-sm text-sm font-medium">
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1 rounded bg-background/80 backdrop-blur-sm text-sm font-medium">
             {selectedIndex + 1} / {images.length}
           </div>
         )}
@@ -83,7 +83,7 @@ export function ImageGallery({ images, productTitle }: ImageGalleryProps) {
               key={index}
               onClick={() => setSelectedIndex(index)}
               className={cn(
-                "flex-shrink-0 h-20 w-20 rounded-lg overflow-hidden border-2 transition-all",
+                "flex-shrink-0 h-20 w-20 rounded overflow-hidden border-2 transition-all",
                 selectedIndex === index
                   ? "border-primary ring-2 ring-primary/20"
                   : "border-transparent hover:border-muted-foreground/30"

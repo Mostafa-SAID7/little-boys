@@ -12,20 +12,29 @@ export function CategoryCard({ category, className }: CategoryCardProps) {
     <Link
       to={`/products?category=${category.slug}`}
       className={cn(
-        "group relative flex flex-col items-center justify-center p-6 rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-card overflow-hidden",
+        "group relative flex items-center justify-between gap-6 p-6 rounded transition-all duration-300 hover:-translate-y-2 hover:shadow-card overflow-hidden min-h-[120px]",
         category.color,
         className
       )}
     >
-      <span className="text-4xl md:text-5xl mb-3 transition-transform duration-300 group-hover:scale-110 group-hover:animate-wiggle">
-        {category.icon}
-      </span>
-      <h3 className="font-display font-bold text-foreground text-center">
-        {category.name}
-      </h3>
-      <p className="text-sm text-foreground/70 mt-1">
-        {category.productCount} items
-      </p>
+      {/* Left: Category Image and Name */}
+      <div className="flex items-center gap-4 flex-1">
+        <div className="flex-shrink-0">
+          <img 
+            src={category.image}
+            alt={category.name}
+            className="w-16 h-16 md:w-20 md:h-20 object-contain transition-transform duration-300 group-hover:scale-110"
+          />
+        </div>
+        <h3 className="font-display font-bold text-foreground text-xl">
+          {category.name}
+        </h3>
+      </div>
+      
+      {/* Right: Product Count with border and bg */}
+      <div className="flex-shrink-0 bg-primary text-primary-foreground border-2 border-primary-foreground/20 rounded px-4 py-2 font-bold">
+        {category.productCount}
+      </div>
     </Link>
   );
 }

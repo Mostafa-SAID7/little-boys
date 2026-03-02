@@ -2,6 +2,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { CartSidebar } from '@/components/cart/CartSidebar';
 import { Breadcrumbs } from '@/components/navigation/Breadcrumbs';
+import { PageHero } from '@/components/layout/PageHero';
 import {
   Accordion,
   AccordionContent,
@@ -89,37 +90,32 @@ const FAQ = () => {
           <Breadcrumbs items={[{ label: 'FAQ' }]} />
         </div>
 
-        <section className="container pb-16">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <span className="text-5xl block mb-4">❓</span>
-              <h1 className="font-display text-4xl font-bold mb-4">
-                Frequently Asked Questions
-              </h1>
-              <p className="text-muted-foreground">
-                Find answers to common questions about orders, shipping, returns, and more.
-              </p>
-            </div>
+        <PageHero 
+          title="Asked Questions"
+          description="Find answers to common questions about orders, shipping, returns, and more."
+          image="/Ask.png"
+          imageAlt="Frequently Asked Questions"
+        />
 
-            <div className="space-y-8">
-              {faqs.map((section) => (
-                <div key={section.category}>
-                  <h2 className="font-display text-xl font-bold mb-4">{section.category}</h2>
-                  <Accordion type="single" collapsible className="bg-card rounded-2xl shadow-soft">
-                    {section.questions.map((faq, index) => (
-                      <AccordionItem key={index} value={`${section.category}-${index}`}>
-                        <AccordionTrigger className="px-6 text-left font-medium">
-                          {faq.q}
-                        </AccordionTrigger>
-                        <AccordionContent className="px-6 text-muted-foreground">
-                          {faq.a}
-                        </AccordionContent>
-                      </AccordionItem>
-                    ))}
-                  </Accordion>
-                </div>
-              ))}
-            </div>
+        <section className="container py-8 mb-8 bg-muted/30 rounded">
+          <div className="max-w-3xl mx-auto space-y-8">
+            {faqs.map((section) => (
+              <div key={section.category}>
+                <h2 className="font-display text-xl font-bold mb-4">{section.category}</h2>
+                <Accordion type="single" collapsible className="bg-card rounded shadow-soft">
+                  {section.questions.map((faq, index) => (
+                    <AccordionItem key={index} value={`${section.category}-${index}`}>
+                      <AccordionTrigger className="px-6 text-left font-medium">
+                        {faq.q}
+                      </AccordionTrigger>
+                      <AccordionContent className="px-6 text-muted-foreground">
+                        {faq.a}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </div>
+            ))}
           </div>
         </section>
       </main>

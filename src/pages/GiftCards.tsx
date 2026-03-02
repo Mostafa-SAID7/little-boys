@@ -3,6 +3,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { CartSidebar } from '@/components/cart/CartSidebar';
 import { Breadcrumbs } from '@/components/navigation/Breadcrumbs';
+import { PageHero } from '@/components/layout/PageHero';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -32,17 +33,16 @@ const GiftCards = () => {
           <Breadcrumbs items={[{ label: 'Gift Cards' }]} />
         </div>
 
-        <section className="container pb-16">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <span className="text-5xl block mb-4">🎁</span>
-              <h1 className="font-display text-4xl font-bold mb-4">Gift Cards</h1>
-              <p className="text-muted-foreground">
-                Give the gift of wonder! Perfect for birthdays, holidays, or just because.
-              </p>
-            </div>
+        <PageHero
+          title="Gift Cards"
+          description="Give the gift of wonder! Perfect for birthdays, holidays, or just because."
+          image="/Gift.png"
+          imageAlt="Gift Cards"
+        />
 
-            <div className="bg-card rounded-2xl p-8 shadow-soft">
+        <section className="container pb-8">
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-card rounded p-8 shadow-soft">
               <form onSubmit={handlePurchase} className="space-y-8">
                 {/* Amount selection */}
                 <div>
@@ -59,7 +59,7 @@ const GiftCards = () => {
                           setCustomAmount('');
                         }}
                         className={cn(
-                          "h-14 rounded-xl font-display font-bold text-lg transition-all",
+                          "h-14 rounded font-display font-bold text-lg transition-all",
                           selectedAmount === amount && !customAmount
                             ? "bg-primary text-primary-foreground"
                             : "bg-muted hover:bg-muted/80"

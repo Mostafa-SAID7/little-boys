@@ -17,9 +17,9 @@ export function NewsletterSection() {
   };
 
   return (
-    <section className="py-16 md:py-20 bg-primary/5">
+    <section className="py-8 md:py-20 bg-primary/5">
       <div className="container">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-8 items-center max-w-6xl mx-auto">
           {/* Image */}
           <div className="relative min-h-[250px] md:min-h-[300px] max-h-[400px]">
             <img
@@ -45,7 +45,7 @@ export function NewsletterSection() {
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 h-12 rounded-xl"
+                className="flex-1 h-12 rounded"
                 required
               />
               <Button type="submit" size="lg">

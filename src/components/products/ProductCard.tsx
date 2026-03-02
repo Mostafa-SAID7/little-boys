@@ -36,14 +36,14 @@ export function ProductCard({ product, className }: ProductCardProps) {
   return (
     <article
       className={cn(
-        "group relative bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-card transition-all duration-300 hover:-translate-y-1",
+        "group relative bg-card rounded overflow-hidden shadow-soft hover:shadow-card transition-all duration-300 hover:-translate-y-1",
         className
       )}
       role="article"
       aria-labelledby={`product-${product.id}-title`}
     >
       {/* Image */}
-      <Link to={`/product/${product.slug}`} className="relative aspect-square bg-muted overflow-hidden block">
+      <Link to={`/products/${product.slug}`} className="relative aspect-square bg-muted overflow-hidden block">
         <img
           src={product.images[0]}
           alt={product.title}
@@ -68,7 +68,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
 
         {/* Wishlist button */}
         <button
-          className="absolute bottom-3 right-3 h-9 w-9 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-200 hover:bg-background hover:scale-110"
+          className="absolute bottom-3 right-3 h-9 w-9 rounded bg-background/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-200 hover:bg-background hover:scale-110"
           aria-label={`Add ${product.title} to wishlist`}
         >
           <Heart className="h-4 w-4 text-muted-foreground hover:text-primary" />
@@ -83,7 +83,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
         </p>
 
         {/* Title */}
-        <Link to={`/product/${product.slug}`}>
+        <Link to={`/products/${product.slug}`}>
           <h3
             id={`product-${product.id}-title`}
             className="font-display font-semibold text-foreground line-clamp-2 mb-2 group-hover:text-primary transition-colors"

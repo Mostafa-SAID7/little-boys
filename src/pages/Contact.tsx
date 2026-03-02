@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
-import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, MessageCircle } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -32,10 +32,14 @@ const Contact = () => {
           <Breadcrumbs items={[{ label: 'Contact Us' }]} />
         </div>
 
-        <section className="container pb-16">
+        <section className="container">
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <span className="text-5xl block mb-4">💬</span>
+            <div className="text-center mb-8">
+              <div className="flex items-center justify-center mb-6">
+                <div className="flex items-center justify-center w-20 h-20 rounded bg-primary/10">
+                  <MessageCircle className="h-10 w-10 text-primary" />
+                </div>
+              </div>
               <h1 className="font-display text-4xl font-bold mb-4">Get in Touch</h1>
               <p className="text-muted-foreground max-w-lg mx-auto">
                 Have a question? We'd love to hear from you. Send us a message and we'll 
@@ -43,40 +47,40 @@ const Contact = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              {/* Contact info */}
-              <div className="space-y-6">
-                <div className="bg-muted rounded-2xl p-6">
-                  <Mail className="h-6 w-6 text-primary mb-3" />
-                  <h3 className="font-display font-semibold mb-1">Email</h3>
-                  <p className="text-muted-foreground text-sm">hello@littleboys.com</p>
-                </div>
-                <div className="bg-muted rounded-2xl p-6">
-                  <Phone className="h-6 w-6 text-primary mb-3" />
-                  <h3 className="font-display font-semibold mb-1">Phone</h3>
-                  <p className="text-muted-foreground text-sm">1-800-LITTLEBOYS</p>
-                </div>
-                <div className="bg-muted rounded-2xl p-6">
-                  <MapPin className="h-6 w-6 text-primary mb-3" />
-                  <h3 className="font-display font-semibold mb-1">Address</h3>
-                  <p className="text-muted-foreground text-sm">
-                    123 Imagination Lane<br />
-                    San Francisco, CA 94102
-                  </p>
-                </div>
-                <div className="bg-muted rounded-2xl p-6">
-                  <Clock className="h-6 w-6 text-primary mb-3" />
-                  <h3 className="font-display font-semibold mb-1">Hours</h3>
-                  <p className="text-muted-foreground text-sm">
-                    Mon-Fri: 9am - 6pm PST<br />
-                    Sat-Sun: 10am - 4pm PST
-                  </p>
-                </div>
+            {/* Contact Info Cards */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+              <div className="bg-muted rounded p-6 text-center">
+                <Mail className="h-6 w-6 text-primary mb-3 mx-auto" />
+                <h3 className="font-display font-semibold mb-1 text-sm">Email</h3>
+                <p className="text-muted-foreground text-xs">hello@littleboys.com</p>
               </div>
+              <div className="bg-muted rounded p-6 text-center">
+                <Phone className="h-6 w-6 text-primary mb-3 mx-auto" />
+                <h3 className="font-display font-semibold mb-1 text-sm">Phone</h3>
+                <p className="text-muted-foreground text-xs">1-800-LITTLEBOYS</p>
+              </div>
+              <div className="bg-muted rounded p-6 text-center">
+                <MapPin className="h-6 w-6 text-primary mb-3 mx-auto" />
+                <h3 className="font-display font-semibold mb-1 text-sm">Address</h3>
+                <p className="text-muted-foreground text-xs">
+                  123 Imagination Lane<br />
+                  San Francisco, CA 94102
+                </p>
+              </div>
+              <div className="bg-muted rounded p-6 text-center">
+                <Clock className="h-6 w-6 text-primary mb-3 mx-auto" />
+                <h3 className="font-display font-semibold mb-1 text-sm">Hours</h3>
+                <p className="text-muted-foreground text-xs">
+                  Mon-Fri: 9am - 6pm PST<br />
+                  Sat-Sun: 10am - 4pm PST
+                </p>
+              </div>
+            </div>
 
+            <div className="grid md:grid-cols-3 gap-8">
               {/* Contact form */}
-              <div className="md:col-span-2">
-                <form onSubmit={handleSubmit} className="bg-card rounded-2xl p-8 shadow-soft space-y-6">
+              <div className="md:col-span-2 md:mb-5">
+                <form onSubmit={handleSubmit} className="bg-card rounded p-8 shadow-soft space-y-6">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="name">Name</Label>
@@ -121,6 +125,17 @@ const Contact = () => {
                     Send Message
                   </Button>
                 </form>
+              </div>
+
+              {/* Contact image */}
+              <div className="space-y-6">
+                <div className="rounded overflow-hidden h-full">
+                  <img 
+                    src="/contact.png" 
+                    alt="Contact us" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
