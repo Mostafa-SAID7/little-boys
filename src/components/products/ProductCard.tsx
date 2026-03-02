@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils';
 interface ProductCardProps {
   product: Product;
   className?: string;
+  viewMode?: 'grid' | 'list';
 }
 
 function getAgeBadgeVariant(ageRange: { min: number; max: number }) {
@@ -22,7 +23,7 @@ function getAgeLabel(ageRange: { min: number; max: number }) {
   return `${ageRange.min}-${ageRange.max} yrs`;
 }
 
-export function ProductCard({ product, className }: ProductCardProps) {
+export function ProductCard({ product, className, viewMode = 'grid' }: ProductCardProps) {
   const { addItem } = useCart();
 
   const handleAddToCart = () => {
@@ -33,6 +34,123 @@ export function ProductCard({ product, className }: ProductCardProps) {
     ? Math.round((1 - product.price / product.originalPrice) * 100)
     : 0;
 
+  // List view layout
+  if (viewMode === 'list') {
+    return (
+      <article
+        className={cn(
+          "group relative bg-card rounded overflow-hidden shadow-soft hover:shadow-card transition-all duration-300",
+          className
+        )}
+        role="article"
+        aria-labelledby={`product-${product.id}-title`}
+      >
+        <div className="flex gap-4 p-4">
+          {/* Image - smaller and on the left */}
+          <Link to={`/products/${product.slug}`} className="relative flex-shrink-0">
+            <div className="relative w-32 h-32 bg-muted rounded overflow-hidden">
+              <img
+                src={product.images[0]}
+                alt={product.title}
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              
+              {/* Age badge */}
+              <Badge
+                variant={getAgeBadgeVariant(product.ageRange)}
+                className="absolute top-2 right-2 text-xs"
+              >
+                {getAgeLabel(product.ageRange)}
+              </Badge>
+            </div>
+          </Link>
+
+          {/* Content - on the right */}
+          <div className="flex-1 min-w-0 flex flex-col">
+            {/* Top section */}
+            <div className="flex-1">
+              {/* Badges */}
+              <div className="flex flex-wrap gap-1.5 mb-2">
+                {product.isNew && <Badge variant="new">New</Badge>}
+                {product.isBestseller && <Badge variant="bestseller">Bestseller</Badge>}
+                {discountPercent > 0 && <Badge variant="sale">-{discountPercent}%</Badge>}
+              </div>
+
+              {/* Category */}
+              <p className="text-xs text-muted-foreground uppercase tracking-wide mb-1">
+                {product.categories[0]}
+              </p>
+
+              {/* Title */}
+              <Link to={`/products/${product.slug}`}>
+                <h3
+                  id={`product-${product.id}-title`}
+                  className="font-display font-semibold text-lg text-foreground line-clamp-2 mb-2 group-hover:text-primary transition-colors"
+                >
+                  {product.title}
+                </h3>
+              </Link>
+
+              {/* Rating */}
+              <div className="flex items-center gap-1 mb-2">
+                <Star className="h-3.5 w-3.5 fill-category-toys text-category-toys" />
+                <span className="text-sm font-medium">{product.rating}</span>
+                <span className="text-xs text-muted-foreground">({product.reviewCount})</span>
+              </div>
+
+              {/* Product badges */}
+              {product.badges && product.badges.length > 0 && (
+                <div className="flex flex-wrap gap-1 mb-2">
+                  {product.badges.slice(0, 3).map((badge) => (
+                    <Badge key={badge} variant="eco" className="text-[10px]">
+                      {badge}
+                    </Badge>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Bottom section - Price & Actions */}
+            <div className="flex items-center justify-between gap-4 mt-2">
+              <div className="flex items-baseline gap-2">
+                <span className="font-display font-bold text-xl text-foreground">
+                  ${product.price.toFixed(2)}
+                </span>
+                {product.originalPrice && (
+                  <span className="text-sm text-muted-foreground line-through">
+                    ${product.originalPrice.toFixed(2)}
+                  </span>
+                )}
+              </div>
+              <div className="flex items-center gap-2">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  aria-label={`Add ${product.title} to wishlist`}
+                  className="h-9 w-9"
+                >
+                  <Heart className="h-4 w-4" />
+                </Button>
+                <Button
+                  variant="soft"
+                  size="sm"
+                  onClick={handleAddToCart}
+                  aria-label={`Add ${product.title} to cart`}
+                  className="gap-2"
+                >
+                  <ShoppingBag className="h-4 w-4" />
+                  Add to Cart
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    );
+  }
+
+  // Grid view layout (original)
   return (
     <article
       className={cn(
