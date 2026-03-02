@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Quicksand', 'sans-serif'],
+        display: ['Playpen Sans', 'cursive'],
         body: ['Nunito', 'sans-serif'],
       },
       colors: {
