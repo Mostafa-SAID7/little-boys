@@ -35,9 +35,11 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <span className="text-2xl">🧸</span>
+              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary text-primary-foreground font-bold text-lg">
+                LB
+              </div>
               <span className="font-display font-bold text-xl text-foreground">
-                Little<span className="text-primary">Wonders</span>
+                Little <span className="text-primary">Boys</span>
               </span>
             </Link>
             <p className="text-sm text-muted-foreground mb-4">

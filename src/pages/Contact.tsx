@@ -54,7 +54,7 @@ const Contact = () => {
                 <div className="bg-muted rounded-2xl p-6">
                   <Phone className="h-6 w-6 text-primary mb-3" />
                   <h3 className="font-display font-semibold mb-1">Phone</h3>
-                  <p className="text-muted-foreground text-sm">1-800-WONDERS</p>
+                  <p className="text-muted-foreground text-sm">1-800-LITTLEBOYS</p>
                 </div>
                 <div className="bg-muted rounded-2xl p-6">
                   <MapPin className="h-6 w-6 text-primary mb-3" />
